@@ -19,25 +19,34 @@ Effective process evolution follows a lightweight cycle:
 - Measure adoption and revisit as new insights emerge
 
 > [!IMPORTANT]
-> Use the **GPT-4.1** model for all conversations with Copilot Spaces.
+> If you are using a Copilot free plan or are concerned with impacting premium usage quotas, use a **0x** model or **Auto** if available. These models do not consume premium request units. For more information, see [GitHub Copilot plans](https://docs.github.com/en/copilot/get-started/plans#comparing-copilot-plans) and [Copilot Requests](https://docs.github.com/en/copilot/concepts/billing/copilot-requests).
 
 ### ⌨️ Activity: Attach an issue template and create an issue for process improvements
 
-_Use the following prompt in a new Copilot Space conversation:_
+   <img width="50%" alt="copilot-spaces-yours" src="../images/copilot-spaces-yours.png" />
 
-- Select your repository
+1. Add your files from the repository to the conversation by clicking on <img width="5%" alt="add-files-plus" src="../images/add-files-plus.png" /> and selecting the option to add **Files**:
 
-  > ```text
-  > {{full_repo_name}}
-  > ```
+   <img width="50%" alt="copilot-spaces-chat-plus" src="../images/copilot-spaces-chat-plus.png" />
+   <img width="30%" alt="add-files" src="../images/add-files.png" />
 
-- Select the issue template to this new Copilot Space conversation. </br>
-  `.github/ISSUE_TEMPLATE/add-update-content-to-process-docs.yml`
+1. Select your repository or copy and paste the repository name in the search bar to find it:
 
-     <img width="30%" height="30%" alt="Attach" src="https://github.com/user-attachments/assets/2a447ff9-76d7-462f-9292-4663c8dc0fc9" />
-     <img width="30%" height="30%" alt="Attach files" src="https://github.com/user-attachments/assets/6ac6e33d-b333-424f-b431-e3feb7022b84" />
+   > ```text
+   > {{full_repo_name}}
+   > ```
 
-     <img width="30%" height="30%" alt="Attach issue template conversation" src="https://github.com/user-attachments/assets/5fc71905-ede6-45cb-bcfa-93d2797160b2" />
+   <img width="40%" alt="add-sources-repository" src="../images/add-sources-repository.png" />
+
+1. Select the issue template to this new Copilot Space conversation.
+
+   `.github/ISSUE_TEMPLATE/add-update-content-to-process-docs.yml`
+
+     <img width="30%" alt="add-issue-template" src="../images/add-issue-template.png" />
+
+1. Start a new conversation in the Copilot Space and use the following prompt to create an issue that identifies gaps in the project management processes documentation related to personas/roles and outlines needed improvements. Make sure to reference the attached issue template in your prompt.
+
+   <img width="40%" alt="copilot-spaces-chat" src="../images/copilot-spaces-chat.png" />
 
   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
   >
@@ -52,10 +61,20 @@ _Use the following prompt in a new Copilot Space conversation:_
   > - add to the process document `docs/octoacme-roles-and-personas.md`
   > ```
 
-    <img width="50%" height="50%" alt="personas/roles issue draft" src="https://github.com/user-attachments/assets/cd02e396-2505-450a-aca3-8e1642d6306a" />
+   <details>
+   <summary> 📷 Show screenshot of the issue draft</summary>
 
-  <img width="50%" height="50%" alt="personas/roles issue created" src="https://github.com/user-attachments/assets/7f30e13b-7efd-45a0-939a-e7095ff0637c" />
+   <img width="50%" alt="personas-roles-issue-draft" src="../images/personas-roles-issue-draft.png" />
 
+   </details>
+   You can copy or open the link in a new tab to see the newly created issue
+
+   <details>
+   <summary> 📷 Show screenshot of the created issue</summary>
+
+   <img width="50%" alt="personas-roles-issue-created" src="../images/personas-roles-issue-created.png" />
+
+   </details>
 
 ### ⌨️ Activity: Attach an issue and create a Pull Request
 
@@ -65,49 +84,61 @@ In the same Copilot Space conversation do the following:
 
 1. In this activity we will attach the issue you created in the previous activity
 2. This will assign the issue to the coding agent to create a pull request with an update to our personas/roles document in the `docs/` folder
-3. Copy and paste the url for the issue that we created in the previous activity. </br>
+3. Copy and paste the URL for the issue that we created in the previous activity.
 
 > [!NOTE]
->
-> - Make sure the issue below matches the issue you want to attach
-> - Hit **\<SHIFT\> + \<ENTER\>** so you don't start Copilot working on the conversation
+> Make sure the issue below matches the issue you want to attach
+> Hit **\<SHIFT\> + \<ENTER\>** so you don't start Copilot working on the conversation
 
-Check issues list: [https://github.com/{{full_repo_name}}/issues](https://github.com/{{full_repo_name}}/issues) </br>
+   In case the issue is not attached properly, you can also type the issue reference in the conversation:
 
-> ```text
-> @{{full_repo_name}}/issues/4
-> ```
+   Check issues list: [https://github.com/{{full_repo_name}}/issues](https://github.com/{{full_repo_name}}/issues)
 
-   <img width="40%" height="40%" alt="repository issue and pull request creation" src="https://github.com/user-attachments/assets/cf4f0c32-76cb-429d-b607-f65f444b07d5" />
+   ```text
+   @{{full_repo_name}}/issues/#
+   ```
 
-> ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
->
-> ```prompt
-> - Using the github-coding-agent tool create a pull request that implements process improvements
->   based on the analysis we did earlier.
-> - The improvements should address gaps or inefficiencies identified in the project management documentation.
-> - The pull request should include updates to existing docs or new templates/checklists as needed.
-> - All documents should be in the `docs/` folder
-> - Add this pull request to the attached issue.
-> - Add {{login}} as a reviewer for this pull request
-> ```
+   (Example: if your issue is #4, type `@{{full_repo_name}}/issues/4`)
 
-1. **Allow the coding agent**: When prompted, select **Allow** to let the coding agent work on your repository
+   <img width="40%" alt="repository-issue-pr-creation" src="../images/repository-issue-pr-creation-step3.png" />
 
-   <img width="50%" height="50%" alt="Copilot coding agent allow" src="https://github.com/user-attachments/assets/b0c92c04-d12b-4c5e-b682-33643b90ee11" />
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > - Using the github-coding-agent tool create a pull request that implements process improvements
+   >   based on the analysis we did earlier.
+   > - The improvements should address gaps or inefficiencies identified in the project management documentation.
+   > - The pull request should include updates to existing docs or new templates/checklists as needed.
+   > - All documents should be in the `docs/` folder
+   > - Add this pull request to the attached issue.
+   > - Add {{login}} as a reviewer for this pull request
+   > ```
 
-1. **Monitor progress**: You should receive a notification that the Copilot coding agent is working on your pull request.
+4. **Allow the coding agent**: When prompted, select **Allow** to let the coding agent work on your repository
+
+   <img width="50%" alt="copilot-coding-agent-allow" src="../images/copilot-coding-agent-allow.png" />
+
+5. **Monitor progress**: You should receive a notification that the Copilot coding agent is working on your pull request.
 
    There are two ways you can check the status of the coding agent working on your pull request
-   1. Go to your repository and click **Pull requests** to see the progress:
 
-      <img width="70%" height="70%" alt="pull requests" src="https://github.com/user-attachments/assets/88e9876e-2dae-43a4-86ff-29c4cdc6077c" />
+   #### Option 1: Check Pull Requests in your repository
 
-   1. You can track progress and view details in **Mission Control** for **agent tasks** by following the task link
+   Go to your repository and click **Pull requests** and select the pull request to see the progress:
 
-      <img width="40%" height="40%" alt="mission control" src="https://github.com/user-attachments/assets/a64c1826-720e-4b5f-8d0f-8aebc9aca501" />
+      <img width="70%" alt="pull-requests" src="../images/pull-requests.png" />
 
-1. **Check open pull requests**: We can check pull request status from our **Copilot Space** as well.
+   #### Option 2: Check Agent Sessions in your Copilot Space on the left side under Agent sessions
+
+   You can track the progress of the Copilot coding agent and view details on the left side under **Agent sessions**. Click on the session to see details about the tasks being performed by the agent.
+
+      <img width="40%" alt="agent-session" src="../images/agent-sessions-2.png" />
+
+   You can get to the pull request that the agent is working on by clicking the link in the session details at the bottom where it says **View pull request**.
+
+      <img width="40%" alt="view-pull-request" src="../images/view-pull-request.png" />
+
+6. **Check open pull requests**: We can check pull request status from our **Copilot Space** as well.
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -115,23 +146,23 @@ Check issues list: [https://github.com/{{full_repo_name}}/issues](https://github
    > check open pull requests
    > ```
 
-   <img width="40%" height="40%" alt="mission control" src="https://github.com/user-attachments/assets/66693282-e5f6-45d6-8ca8-968e73826738" />
+   <img width="40%" alt="check-open-prs" src="../images/check-open-prs-3.png" />
 
-> [!NOTE]  
-> The coding agent typically takes 5-15 minutes to complete the work. You can click **View session** to watch the progress if desired.
+> [!NOTE]
+> The coding agent typically takes 5-15 minutes to complete the work. If you want to track the work that the Copilot coding agent is doing from within the pull request, click **View session** <img width="10%" alt="view-session" src="../images/view-session.png" /> to watch the progress if desired.
 
-1. **Review and merge**: Once the pull request is ready:
+7. **Review and merge**: Once the pull request is ready:
 
    a. **Submit review**: Leave a comment (optional), click **Approve**, then **Submit review**
 
-      <img width="70%" height="70%" alt="Add review" src="https://github.com/user-attachments/assets/ea460dc3-a86d-467b-8469-bd9244b915ea" />
+      <img width="70%" alt="add-review" src="../images/add-review.png" />
 
-      <img width="50%" height="50%" alt="Submit review" src="https://github.com/user-attachments/assets/15042891-c8fa-4acc-a25d-c588cf6a3ffe" />
+      <img width="50%" alt="submit-review" src="../images/submit-review.png" />
 
    b. **Merge**: Select **Ready for review**, then **Merge pull request** and **Confirm merge**
 
-      <img width="50%" height="50%" alt="Ready for review" src="https://github.com/user-attachments/assets/2348378d-a597-404f-827d-4003d79055c0" />
-      <img width="50%" height="50%" alt="Merge pull request" src="https://github.com/user-attachments/assets/fda15799-a123-4e6a-b32a-c7ec44db3418" />
+      <img width="50%" alt="ready-for-review" src="../images/ready-for-review.png" />
+      <img width="50%" alt="merge-pull-request" src="../images/merge-pull-request.png" />
 
 <details>
 <summary>Having trouble? 🤷</summary>
